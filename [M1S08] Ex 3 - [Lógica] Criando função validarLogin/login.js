@@ -13,11 +13,13 @@ loginBtn.addEventListener('click', function login() {
 
 	for (let i in usersData) {
 		if (emailInput == usersData[i].email && passwordInput == usersData[i].password) {
-			validLogin = true;
+      validLogin = true;
+      localStorage.setItem(usersData[i].name, usersData[i].email)
       alert('Loged user!')
       break;
 		} else {
 			alert('Incorret email or password!');
+      break;
 		}
 	}
 });
