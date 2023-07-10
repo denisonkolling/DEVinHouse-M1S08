@@ -6,20 +6,21 @@ const usersData = [
 
 let loginSubmit = document.querySelector('#register-form');
 
-loginSubmit.addEventListener('submit', function validateLogin() {
+loginSubmit.addEventListener('submit', function validateLogin(e) {
+
+	e.preventDefault();
+
 	let emailInput = document.querySelector('#email').value;
 	let passwordInput = document.querySelector('#password').value;
 	let validLogin = false;
 
 	for (let i in usersData) {
-		if (
-			emailInput == usersData[i].email &&
-			passwordInput == usersData[i].password
-		) {
+		if (emailInput == usersData[i].email &&	passwordInput == usersData[i].password) {
 			validLogin = true;
-			let user_data = (usersData[i].name, usersData[i].email);
-			localStorage.setItem('user_data', user_data);
+			let user_data = ({name: usersData[i].name, email: usersData[i].email});
+			localStorage.setItem('user_data', JSON.stringify(user_data));
 			break;
+
 		}
 	}
 
