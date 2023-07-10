@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f3f6fd;
+    font-size: 18px;
+	color: rgb(189, 196, 203)
+}
+
+.nav-item .nav-link:hover {
+    color: orange;
+}
+
+.nav-icons a i:hover {
+    color: orange;
+}
+
+.wish-icon a i:hover{
+    color: red;
+    scale: 1.05;
+}
+
